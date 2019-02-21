@@ -3,7 +3,7 @@
     <img [src]="image()">
   </div>
   <div class="product-info">
-    <h1>{{product}} {{brand}}</h1>
+    <h1>{{brand}} {{product}}</h1>
     <p *ngIf="inStock()">In Stock</p>
     <p *ngIf="!inStock()">Out of Stock</p>
     <p>User is Premium: {{ premium }}</p>
@@ -15,17 +15,17 @@
       (mouseover)="updateProduct(i)">
     </div>
     <button (click)="addToCart($event)" [disabled]="!inStock()" [ngClass]="{'disabledButton': !inStock()}">Add to cart</button>
-    <div>
-      <h2>Reviews</h2>
-      <p *ngIf="!reviews.length">There are no reviews yet.</p>
-      <ul>
-        <li *ngFor="let review of reviews">
-          <p>{{ review.name }}</p>
-          <p>Rating: {{ review.rating }}</p>
-          <p>{{ review.review }}</p>
-        </li>
-      </ul>
-    </div>
-    <app-review (sendReview)="addReview($event)"></app-review>
   </div>
+  <div>
+    <h2>Reviews</h2>
+    <p *ngIf="!reviews.length">There are no reviews yet.</p>
+    <ul>
+      <li *ngFor="let review of reviews">
+        <p>{{ review.name }}</p>
+        <p>Rating: {{ review.rating }}</p>
+        <p>{{ review.review }}</p>
+      </li>
+    </ul>
+  </div>
+  <app-review (sendReview)="addReview($event)"></app-review>
 </div>

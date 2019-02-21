@@ -1,6 +1,6 @@
 <form class="review-form" (submit)="onSubmit()">
   <div *ngIf="review.errors.length">
-    <b>Please correct the following erros(s):</b>
+    <b>Please correct the following error(s):</b>
     <ul>
       <li *ngFor="let error of review.errors">{{ error }}</li>
     </ul>

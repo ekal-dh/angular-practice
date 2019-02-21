@@ -6,12 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./product.component.css"]
 })
 export class ProductComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   @Input() premium: boolean; //from app parents to product child
-  @Output() sendProductId = new EventEmitter(); //from product child to app parents
+  @Output() sendProductId = new EventEmitter();     //from product child to app parents
 
   product = "Socks";
   brand = "Angular Mastery";
